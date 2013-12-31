@@ -17,7 +17,7 @@ if [ $TERM = 'xterm-256color' ]
 then
     #                           Username              @               Hostname              :              Directory              $
     #            [     pink      ]   [    yellow     ]  [     blue     ]   [    yellow     ]  [    green     ]   [    yellow     ]   [ reset ]
-    export PS1="\[\033[38;5;127m\]\u\[\033[38;5;184m\]@\[\033[38;5;69m\]\H\[\033[38;5;184m\]:\[\033[38;5;40m\]\w\[\033[38;5;184m\]$ \[\033[m\]"
+    export PS1="\[\033[38;5;127m\]\u\[\033[38;5;226m\]@\[\033[38;5;32m\]\H\[\033[38;5;226m\]:\[\033[38;5;48m\]\w\[\033[38;5;226m\]$ \[\033[m\]"
 else
     export PS1="\u@\H:\w$ "
 fi

@@ -1,0 +1,67 @@
+#-----------#
+#  General  #
+#-----------#
+
+[user]
+    name  = Michael Hogg
+    email = *************************
+
+[core]
+    editor       = edit --wait --resume
+    excludesfile = /Users/michaelhogg/.gitignore
+
+[alias]
+    st   = status
+    lg   = log --format=hoggshort
+    lgl  = log --format=hogglong
+    fe   = fetch
+    br   = branch -vv
+    ch   = checkout
+    twd  = difftool -t twdiff
+    twdi = difftool -t twdiffi
+    dfu  = difftool -t diffuse
+    dfui = difftool -t diffusei
+
+[color]
+    branch = auto
+    ui     = auto
+
+[color "branch"]
+    upstream = cyan
+
+[pretty]
+    hoggshort = %C(red)%aD  %C(cyan)%an  %C(yellow)%H %C(magenta)%d %C(green)%s
+    hogglong  = %C(red)%aD  %C(cyan)%an  %C(yellow)%H %C(magenta)%d %C(green)%B
+
+
+
+#------------------#
+#  Diff and merge  #
+#------------------#
+
+[diff]
+    tool = twdiff
+
+[merge]
+    tool = opendiff
+
+[difftool]
+    prompt = false
+
+
+#--- TextWrangler ---#
+
+[difftool "twdiff"]
+    cmd = twdiff --resume --reverse --wait \"$LOCAL\" \"$REMOTE\"
+
+[difftool "twdiffi"]
+    cmd = twdiff --resume --reverse --wait --ignore-spaces \"$LOCAL\" \"$REMOTE\"
+
+
+#--- Diffuse ---#
+
+[difftool "diffuse"]
+    cmd = diffuse \"$LOCAL\" \"$REMOTE\"
+
+[difftool "diffusei"]
+    cmd = diffuse --ignore-all-space \"$LOCAL\" \"$REMOTE\"

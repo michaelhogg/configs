@@ -1,0 +1,31 @@
+colour text                    1     1     1        # 0     0     0      Regular text
+colour text_background         0     0     0        # 1     1     1      Background of the text area
+
+colour difference_1            0     0.375 1        # 1     0.625 0.625  Differences between the first  pair of files
+colour difference_2            0.85  0.625 0.775    # 0.85  0.625 0.775  Differences between the second pair of files
+colour difference_3            0.85  0.775 0.625    # 0.85  0.775 0.625  Differences between the third  pair of files
+
+colour hatch                   0.5   0     0        # 0.8   0.8   0.8    Alignment gaps
+
+colour line_number             0     0     0        # 0     0     0      Line numbers
+colour line_number_background  0.75  0.75  0.75     # 0.75  0.75  0.75   Background of the line number area
+
+colour map_background          0.6   0.6   0.6      # 0.6   0.6   0.6    Background of the map area
+colour margin                  0.8   0.8   0.8      # 0.8   0.8   0.8    Right margin
+
+colour line_selection          1     1     0        # 0.7   0.7   1      Selected lines
+colour alignment               1     1     0        # 1     1     0      A line picked for manual alignment
+colour character_selection     0.7   0.7   1        # 0.7   0.7   1      Selected characters
+colour cursor                  0     0     0        # 0     0     0      Cursor
+colour edited                  0.5   1     0.5      # 0.5   1     0.5    Edited lines
+colour preedit                 0     0     0        # 0     0     0      Pre-edit text
+
+
+float line_difference_opacity       0.333   # 0.3  Opacity for line differences
+float character_difference_opacity  1       # 0.4  Opacity for character differences
+
+float line_selection_opacity        0.175   # 0.4  Opacity for the line selection
+float character_selection_opacity   0.4     # 0.4  Opacity for the character selection
+
+float alignment_opacity             1       # 1    Opacity for the manual alignment
+float edited_opacity                0.4     # 0.4  Opacity for the edited line

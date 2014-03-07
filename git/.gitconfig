@@ -17,6 +17,8 @@
     fe   = fetch
     br   = branch -vv
     ch   = checkout
+    po   = push origin
+    puo  = push --set-upstream origin
     twd  = difftool -t twdiff
     twdi = difftool -t twdiffi
     dfu  = difftool -t diffuse

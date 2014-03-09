@@ -39,12 +39,9 @@
 		<string>----</string><!-- Horizontal rule               -->
 	</array>
 	
-	<!-- Specify a comment-out string: -->
 	<key>BBLMCommentLineDefault</key>
 	<string>$$$$$</string>
 	
-	<!-- You must specify the character set for
-             keywords and identifiers. Substitute your own:  -->
 	<key>Language Features</key>
 	<dict>
 		<key>Identifier and Keyword Characters</key>

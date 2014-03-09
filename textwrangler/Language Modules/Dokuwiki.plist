@@ -45,7 +45,7 @@
 	<key>Language Features</key>
 	<dict>
 		<key>Identifier and Keyword Characters</key>
-		<string>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-*=[]{}'"|/^:\</string>
+		<string>-=*^:'[]{}\|/</string>
 		<key>String Pattern</key>
 		<!-- '' is monospace -->
 		<!-- ** is bold -->

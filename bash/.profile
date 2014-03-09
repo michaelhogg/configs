@@ -73,11 +73,33 @@ function ppjsonpaste {
 
 #----- Git -----#
 
-# PHP lint for modified files
+# PHP and JS lint for modified files
 function gitlint {
+
     git status
+
+    echo ""
     echo -e "\033[38;5;136m--- PHP lint (working tree) ---\033[m"
     git diff --name-only | egrep ".*\.(php|phtml)$" | xargs -n1 php -l
+
+    echo ""
     echo -e "\033[38;5;136m--- PHP lint (staged) ---\033[m"
     git diff --name-only --staged | egrep ".*\.(php|phtml)$" | xargs -n1 php -l
+
+    echo ""
+    echo -e "\033[38;5;136m--- JS GCC lint (working tree) ---\033[m"
+    git diff --name-only | egrep ".*\.js$" | xargs -n1 java -jar /Users/michaelhogg/Documents/JavaScript/Minifiers/GoogleClosureCompiler/compiler-20131014/compiler.jar --js_output_file /dev/null --summary_detail_level 3 --warning_level VERBOSE
+
+    echo ""
+    echo -e "\033[38;5;136m--- JS GCC lint (staged) ---\033[m"
+    git diff --name-only --staged | egrep ".*\.js$" | xargs -n1 java -jar /Users/michaelhogg/Documents/JavaScript/Minifiers/GoogleClosureCompiler/compiler-20131014/compiler.jar --js_output_file /dev/null --summary_detail_level 3 --warning_level VERBOSE
+
+    echo ""
+    echo -e "\033[38;5;136m--- JS YUI lint (working tree) ---\033[m"
+    git diff --name-only | egrep ".*\.js$" | xargs -n1 java -jar /Users/michaelhogg/Documents/JavaScript/Minifiers/YUICompressor/yuicompressor-2.4.8.jar -v -o /dev/null
+
+    echo ""
+    echo -e "\033[38;5;136m--- JS YUI lint (staged) ---\033[m"
+    git diff --name-only --staged | egrep ".*\.js$" | xargs -n1 java -jar /Users/michaelhogg/Documents/JavaScript/Minifiers/YUICompressor/yuicompressor-2.4.8.jar -v -o /dev/null
+
 }

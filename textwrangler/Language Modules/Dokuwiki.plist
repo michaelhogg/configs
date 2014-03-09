@@ -3,22 +3,16 @@
 	"http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 
-<!--  The smallest CLM that will color keywords.
-      Copyright (c) 2012 Bare Bones Software, Inc. -->
-		
 <dict>
-	<!-- You must identify the plist as a CLM: -->
+
 	<key>BBEditDocumentType</key>
 	<string>CodelessLanguageModule</string>
 	
-	<!-- You must identify your language: -->
 	<key>BBLMLanguageDisplayName</key>
 	<string>Dokuwiki</string>
 	<key>BBLMLanguageCode</key>
 	<string>doku</string>
 	
-	<!-- Not required, but there’s not much point to
-	     a language module if it doesn’t color syntax: -->
 	<key>BBLMColorsSyntax</key>
 	<true/>
 	

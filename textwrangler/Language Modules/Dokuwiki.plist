@@ -18,25 +18,25 @@
 	
 	<key>BBLMPredefinedNameList</key>
 	<array>
-		<string>======</string>
-		<string>=====</string>
-		<string>====</string>
-		<string>===</string>
+		<string>======</string><!-- Headline Level 1 -->
+		<string>=====</string><!-- Headline Level 2 -->
+		<string>====</string><!-- Headline Level 3 -->
+		<string>===</string><!-- Headline Level 4 -->
 	</array>
 	
 	<key>BBLMKeywordList</key>
 	<array>
-		<string>^</string>
-		<string>^^</string>
-		<string>^^^</string>
-		<string>|</string>
-		<string>||</string>
-		<string>|||</string>
-		<string>:::</string>
-		<string>\\</string>
-		<string>--</string>
-		<string>---</string>
-		<string>----</string>
+		<string>^</string><!-- Table header cell -->
+		<string>^^</string><!-- Table header cell (2 colspan) -->
+		<string>^^^</string><!-- Table header cell (3 colspan) -->
+		<string>|</string><!-- Table normal cell -->
+		<string>||</string><!-- Table normal cell (2 colspan) -->
+		<string>|||</string><!-- Table normal cell (3 colspan) -->
+		<string>:::</string><!-- Table rowspan cell -->
+		<string>\\</string><!-- Force newline -->
+		<string>--</string><!-- N dash -->
+		<string>---</string><!-- M dash -->
+		<string>----</string><!-- Horizontal rule -->
 	</array>
 	
 	<!-- Specify a comment-out string: -->
@@ -50,6 +50,10 @@
 		<key>Identifier and Keyword Characters</key>
 		<string>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-*=[]{}'"|/^:\</string>
 		<key>String Pattern</key>
+		<!-- '' is monospace -->
+		<!-- ** is bold -->
+		<!-- // is italid -->
+		<!-- [[ ]] is a link -->
 		<string>(('').+?(''))|((\*\*).+?(\*\*))|((//).+?(//))|((\[\[).+?(\]\]))</string>
 	</dict>
 	

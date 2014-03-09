@@ -26,17 +26,23 @@
 	
 	<key>BBLMKeywordList</key>
 	<array>
-		<string>^</string>   <!-- Table header cell             -->
-		<string>^^</string>  <!-- Table header cell (2 colspan) -->
-		<string>^^^</string> <!-- Table header cell (3 colspan) -->
-		<string>|</string>   <!-- Table normal cell             -->
-		<string>||</string>  <!-- Table normal cell (2 colspan) -->
-		<string>|||</string> <!-- Table normal cell (3 colspan) -->
-		<string>:::</string> <!-- Table rowspan cell            -->
-		<string>\\</string>  <!-- Force newline                 -->
-		<string>--</string>  <!-- N dash                        -->
-		<string>---</string> <!-- M dash                        -->
-		<string>----</string><!-- Horizontal rule               -->
+		<string>^</string>     <!-- Table header cell             -->
+		<string>^^</string>    <!-- Table header cell (2 colspan) -->
+		<string>^^^</string>   <!-- Table header cell (3 colspan) -->
+		<string>^^^^</string>  <!-- Table header cell (4 colspan) -->
+		<string>^^^^^</string> <!-- Table header cell (5 colspan) -->
+		<string>^^^^^^</string><!-- Table header cell (6 colspan) -->
+		<string>|</string>     <!-- Table normal cell             -->
+		<string>||</string>    <!-- Table normal cell (2 colspan) -->
+		<string>|||</string>   <!-- Table normal cell (3 colspan) -->
+		<string>||||</string>  <!-- Table normal cell (4 colspan) -->
+		<string>|||||</string> <!-- Table normal cell (5 colspan) -->
+		<string>||||||</string><!-- Table normal cell (6 colspan) -->
+		<string>:::</string>   <!-- Table rowspan cell            -->
+		<string>\\</string>    <!-- Force newline                 -->
+		<string>--</string>    <!-- N dash                        -->
+		<string>---</string>   <!-- M dash                        -->
+		<string>----</string>  <!-- Horizontal rule               -->
 	</array>
 	
 	<key>BBLMCommentLineDefault</key>

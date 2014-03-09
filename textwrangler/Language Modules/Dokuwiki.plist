@@ -46,15 +46,17 @@
 	<dict>
 		<key>Identifier and Keyword Characters</key>
 		<string>-=*^:'[]{}\|/</string>
-		<key>String Pattern</key>
-		<!-- '' is monospace -->
-		<!-- ** is bold -->
-		<!-- // is italid -->
-		<!-- [[ ]] is a link -->
+		<!-- '' is monospace   -->
+		<!-- ** is bold        -->
+		<!-- // is italid      -->
+		<!-- [[ ]] is a link   -->
 		<!-- {{ }} is an image -->
+		<key>String Pattern</key>
+		<string>(''.+?'')|(\*\*.+?\*\*)|(//.+?//)|(\[\[.+?\]\])|({{.+?}})</string>
 		<!-- "  *" is an unordered list -->
-		<!-- "  -" is an ordered list -->
-		<string>(('').+?(''))|((\*\*).+?(\*\*))|((//).+?(//))|((\[\[).+?(\]\]))|(({{).+?(}}))|(^  \*)|(^  -)</string>
+		<!-- "  -" is an ordered list   -->
+		<key>Comment Pattern</key>
+		<string>(^  \*)|(^  -)</string>
 	</dict>
 	
 </dict>

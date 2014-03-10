@@ -60,6 +60,9 @@ alias st='stree'
 # mysql5 from MacPorts
 alias mysql='mysql5'
 
+# Diffuse, ignoring all white space
+alias diffusei='diffuse --ignore-all-space'
+
 # Download JSON using cURL, and pretty-print using Python
 function ppjsoncurl {
     curl "$1" | python -m json.tool

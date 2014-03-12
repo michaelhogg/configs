@@ -63,6 +63,9 @@ alias mysql='mysql5'
 # Diffuse, ignoring all white space
 alias diffusei='diffuse --ignore-all-space'
 
+# Less, with long prompt, line numbers gutter, and chopped long lines
+alias lessx='less -MNS'
+
 # Download JSON using cURL, and pretty-print using Python
 function ppjsoncurl {
     curl "$1" | python -m json.tool

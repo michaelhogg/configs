@@ -90,6 +90,14 @@ function gitlint {
     git diff --name-only --staged | egrep ".*\.(php|phtml)$" | xargs -n1 php -l
 
     echo ""
+    echo -e "\033[38;5;136m--- PHP mess detector (working tree) ---\033[m"
+    git diff --name-only | egrep ".*\.(php|phtml)$" | xargs -I {} php /Users/michaelhogg/Documents/PHP/MessDetector/vendor/bin/phpmd {} text codesize,controversial,design,naming,unusedcode
+
+    echo ""
+    echo -e "\033[38;5;136m--- PHP mess detector (staged) ---\033[m"
+    git diff --name-only --staged | egrep ".*\.(php|phtml)$" | xargs -I {} php /Users/michaelhogg/Documents/PHP/MessDetector/vendor/bin/phpmd {} text codesize,controversial,design,naming,unusedcode
+
+    echo ""
     echo -e "\033[38;5;136m--- JS GCC lint (working tree) ---\033[m"
     git diff --name-only | egrep ".*\.js$" | xargs -n1 java -jar /Users/michaelhogg/Documents/JavaScript/Minifiers/GoogleClosureCompiler/compiler-20131014/compiler.jar --js_output_file /dev/null --summary_detail_level 3 --warning_level VERBOSE
 

@@ -77,12 +77,18 @@ function ppjsonpaste {
 }
 
 
-#----- Git -----#
+
+#-----------#
+#  GitLint  #
+#-----------#
 
 # PHP and JS lint for modified files
 function gitlint {
 
     git status
+
+
+    #--- PHP lint ---#
 
     echo ""
     echo -e "\033[38;5;136m--- PHP lint (working tree) ---\033[m"
@@ -91,6 +97,10 @@ function gitlint {
     echo ""
     echo -e "\033[38;5;136m--- PHP lint (staged) ---\033[m"
     git diff --name-only --staged | egrep ".*\.(php|phtml)$" | xargs -n1 php -l
+    
+
+    #--- PHP Mess Detector ---#
+    # Install from phpmd.org using Composer
 
     echo ""
     echo -e "\033[38;5;136m--- PHP mess detector (working tree) ---\033[m"
@@ -100,6 +110,10 @@ function gitlint {
     echo -e "\033[38;5;136m--- PHP mess detector (staged) ---\033[m"
     git diff --name-only --staged | egrep ".*\.(php|phtml)$" | xargs -I {} php /Users/michaelhogg/Documents/PHP/MessDetector/vendor/bin/phpmd {} text codesize,controversial,design,naming,unusedcode
 
+
+    #--- Google's Closure Compiler ---#
+    # Download from developers.google.com/closure/compiler/docs/gettingstarted_app
+
     echo ""
     echo -e "\033[38;5;136m--- JS GCC lint (working tree) ---\033[m"
     git diff --name-only | egrep ".*\.js$" | xargs -n1 java -jar /Users/michaelhogg/Documents/JavaScript/Minifiers/GoogleClosureCompiler/compiler-20131014/compiler.jar --js_output_file /dev/null --summary_detail_level 3 --warning_level VERBOSE
@@ -107,6 +121,10 @@ function gitlint {
     echo ""
     echo -e "\033[38;5;136m--- JS GCC lint (staged) ---\033[m"
     git diff --name-only --staged | egrep ".*\.js$" | xargs -n1 java -jar /Users/michaelhogg/Documents/JavaScript/Minifiers/GoogleClosureCompiler/compiler-20131014/compiler.jar --js_output_file /dev/null --summary_detail_level 3 --warning_level VERBOSE
+
+
+    #--- YUICompressor ---#
+    # Download from github.com/yui/yuicompressor/releases
 
     echo ""
     echo -e "\033[38;5;136m--- JS YUI lint (working tree) ---\033[m"

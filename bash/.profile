@@ -78,6 +78,39 @@ function ppjsonpaste {
 
 
 
+#----------------------------------------#
+#  PHP Analyzer (used by gitlint below)  #
+#----------------------------------------#
+
+# This is needed because PHP Analyzer will only run on a directory, not on an individual file
+function phpanalyser {
+
+    # Print the filename
+    echo ""
+    echo -e "\033[38;5;164m*** $1 ***\033[m"
+    echo ""
+    
+    # Create directory if it doesn't exist
+    mkdir -p /tmp/php-analyser-tmp
+    
+    # Delete the hard-linked file if it already exists
+    if [ -f /tmp/php-analyser-tmp/file.php ] ; then rm /tmp/php-analyser-tmp/file.php ; fi
+
+    # Hard-link the file to be analysed
+    ln "$1" /tmp/php-analyser-tmp/file.php
+    
+    # Run PHP Analyzer
+    php54 /Users/michaelhogg/Documents/PHP/PHPAnalyzer/php-analyzer/bin/phpalizer run /tmp/php-analyser-tmp/
+    
+    # Clean up: delete the hard-linked file
+    rm /tmp/php-analyser-tmp/file.php
+
+}
+
+export -f phpanalyser  # Required for use in gitlint below
+
+
+
 #-----------#
 #  GitLint  #
 #-----------#
@@ -110,6 +143,19 @@ function gitlint {
     echo ""
     echo -e "\033[38;5;136m--- PHP mess detector (staged) ---\033[m"
     git diff --name-only --staged | egrep ".*\.(php|phtml)$" | xargs -I{} php54 /Users/michaelhogg/Documents/PHP/MessDetector/vendor/bin/phpmd {} text codesize,controversial,design,naming,unusedcode
+
+    
+    #--- PHP Analyzer ---#
+    # Install from github.com/scrutinizer-ci/php-analyzer using Composer
+    # Requires php54-sqlite (install using MacPorts)
+
+    echo ""
+    echo -e "\033[38;5;136m--- PHP analyser (working tree) ---\033[m"
+    git diff --name-only | egrep ".*\.(php|phtml)$" | xargs -n1 -I{} bash -c "phpanalyser {}"
+
+    echo ""
+    echo -e "\033[38;5;136m--- PHP analyser (staged) ---\033[m"
+    git diff --name-only --staged | egrep ".*\.(php|phtml)$" | xargs -n1 -I{} bash -c "phpanalyser {}"
 
 
     #--- Google's Closure Compiler ---#

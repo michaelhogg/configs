@@ -89,14 +89,15 @@ function gitlint {
 
 
     #--- PHP lint ---#
+    # Install php54 using MacPorts
 
     echo ""
     echo -e "\033[38;5;136m--- PHP lint (working tree) ---\033[m"
-    git diff --name-only | egrep ".*\.(php|phtml)$" | xargs -n1 php -l
+    git diff --name-only | egrep ".*\.(php|phtml)$" | xargs -n1 php54 -l
 
     echo ""
     echo -e "\033[38;5;136m--- PHP lint (staged) ---\033[m"
-    git diff --name-only --staged | egrep ".*\.(php|phtml)$" | xargs -n1 php -l
+    git diff --name-only --staged | egrep ".*\.(php|phtml)$" | xargs -n1 php54 -l
     
 
     #--- PHP Mess Detector ---#
@@ -104,11 +105,11 @@ function gitlint {
 
     echo ""
     echo -e "\033[38;5;136m--- PHP mess detector (working tree) ---\033[m"
-    git diff --name-only | egrep ".*\.(php|phtml)$" | xargs -I {} php /Users/michaelhogg/Documents/PHP/MessDetector/vendor/bin/phpmd {} text codesize,controversial,design,naming,unusedcode
+    git diff --name-only | egrep ".*\.(php|phtml)$" | xargs -I{} php54 /Users/michaelhogg/Documents/PHP/MessDetector/vendor/bin/phpmd {} text codesize,controversial,design,naming,unusedcode
 
     echo ""
     echo -e "\033[38;5;136m--- PHP mess detector (staged) ---\033[m"
-    git diff --name-only --staged | egrep ".*\.(php|phtml)$" | xargs -I {} php /Users/michaelhogg/Documents/PHP/MessDetector/vendor/bin/phpmd {} text codesize,controversial,design,naming,unusedcode
+    git diff --name-only --staged | egrep ".*\.(php|phtml)$" | xargs -I{} php54 /Users/michaelhogg/Documents/PHP/MessDetector/vendor/bin/phpmd {} text codesize,controversial,design,naming,unusedcode
 
 
     #--- Google's Closure Compiler ---#

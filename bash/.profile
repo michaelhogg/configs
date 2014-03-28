@@ -66,6 +66,9 @@ alias diffusei='diffuse --ignore-all-space'
 # Less, with long prompt, line numbers gutter, and chopped long lines
 alias lessx='less -MNS'
 
+# Hex Fiend -- ridiculousfish.com/hexfiend/
+alias hexfiend='open -b com.ridiculousfish.HexFiend'
+
 # Download JSON using cURL, and pretty-print using Python
 function ppjsoncurl {
     curl "$1" | python -m json.tool

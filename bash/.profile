@@ -69,6 +69,9 @@ alias lessx='less -MNS'
 # Hex Fiend -- ridiculousfish.com/hexfiend/
 alias hexfiend='open -b com.ridiculousfish.HexFiend'
 
+# Pretty-print JSON
+alias ppjson='python -m json.tool'
+
 # Download JSON using cURL, and pretty-print using Python
 function ppjsoncurl {
     curl "$1" | python -m json.tool

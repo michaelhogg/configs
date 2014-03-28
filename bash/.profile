@@ -72,14 +72,12 @@ alias hexfiend='open -b com.ridiculousfish.HexFiend'
 # Pretty-print JSON
 alias ppjson='python -m json.tool'
 
+# Load JSON from the clipboard, and pretty-print using Python
+alias ppjsonpaste='pbpaste | python -m json.tool'
+
 # Download JSON using cURL, and pretty-print using Python
 function ppjsoncurl {
     curl "$1" | python -m json.tool
-}
-
-# Load JSON from the clipboard, and pretty-print using Python
-function ppjsonpaste {
-    pbpaste | python -m json.tool
 }
 
 

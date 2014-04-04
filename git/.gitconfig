@@ -45,7 +45,8 @@
     tool = twdiff
 
 [merge]
-    tool = diffuse
+    tool          = diffuse
+    conflictstyle = diff3
 
 [difftool]
     prompt = false

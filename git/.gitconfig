@@ -45,7 +45,7 @@
     tool = twdiff
 
 [merge]
-    tool = opendiff
+    tool = diffuse
 
 [difftool]
     prompt = false

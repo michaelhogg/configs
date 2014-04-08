@@ -19,6 +19,7 @@
     ch    = checkout
     po    = push origin
     puo   = push --set-upstream origin
+    diffs = diff --staged
     twd   = difftool -t twdiff
     twdi  = difftool -t twdiffi
     twds  = difftool -t twdiff  --staged

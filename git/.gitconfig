@@ -13,6 +13,7 @@
 [alias]
     st    = status
     lg    = log --format=hoggshort
+    lgt   = log --format=hoggshort --max-count=10
     lgl   = log --format=hogglong
     fe    = fetch
     br    = branch -vv

@@ -63,10 +63,10 @@
 #--- TextWrangler ---#
 
 [difftool "twdiff"]
-    cmd = twdiff --resume --reverse --wait \"$LOCAL\" \"$REMOTE\"
+    cmd = twdiff --resume --wait \"$LOCAL\" \"$REMOTE\"
 
 [difftool "twdiffi"]
-    cmd = twdiff --resume --reverse --wait --ignore-spaces \"$LOCAL\" \"$REMOTE\"
+    cmd = twdiff --resume --wait --ignore-spaces \"$LOCAL\" \"$REMOTE\"
 
 
 #--- Diffuse ---#

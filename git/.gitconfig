@@ -11,24 +11,26 @@
     excludesfile = /Users/michaelhogg/.gitignore
 
 [alias]
-    st    = status
-    lg    = log --format=hoggshort
-    lgt   = log --format=hoggshort --max-count=10
-    lgl   = log --format=hogglong
-    fe    = fetch
-    br    = branch -vv
-    ch    = checkout
-    po    = push origin
-    puo   = push --set-upstream origin
-    diffs = diff --staged
-    twd   = difftool -t twdiff
-    twdi  = difftool -t twdiffi
-    twds  = difftool -t twdiff  --staged
-    twdis = difftool -t twdiffi --staged
-    dfu   = difftool -t diffuse
-    dfui  = difftool -t diffusei
-    dfus  = difftool -t diffuse  --staged
-    dfuis = difftool -t diffusei --staged
+    st     = status
+    lg     = log --format=hoggshort
+    lgt    = log --format=hoggshort --max-count=10
+    lgl    = log --format=hogglong
+    fe     = fetch
+    br     = branch -vv
+    ch     = checkout
+    po     = push origin
+    puo    = push --set-upstream origin
+    diffs  = diff --staged
+    diffi  = diff --ignore-all-space
+    diffis = diff --ignore-all-space --staged
+    twd    = difftool -t twdiff
+    twdi   = difftool -t twdiffi
+    twds   = difftool -t twdiff  --staged
+    twdis  = difftool -t twdiffi --staged
+    dfu    = difftool -t diffuse
+    dfui   = difftool -t diffusei
+    dfus   = difftool -t diffuse  --staged
+    dfuis  = difftool -t diffusei --staged
 
 [color]
     branch = auto

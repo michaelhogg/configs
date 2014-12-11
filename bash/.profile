@@ -87,3 +87,8 @@ function ppjsoncurl {
 function phpserver {
     php -S localhost:$1
 }
+
+# Display processes which are listening on the specified port
+function portlistening {
+    lsof -i :$1
+}

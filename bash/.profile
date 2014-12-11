@@ -82,3 +82,8 @@ alias ppjsonpaste='pbpaste | python -m json.tool'
 function ppjsoncurl {
     curl "$1" | python -m json.tool
 }
+
+# Start a local PHP server on the specified port
+function phpserver {
+    php -S localhost:$1
+}

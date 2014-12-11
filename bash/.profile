@@ -47,7 +47,7 @@ source ~/.git-completion.sh
 #  Aliases and simple functions  #
 #--------------------------------#
 
-alias cls='tput reset; ls -la'
+alias cls='tput reset; ls -laG'
 
 function cdl {
     cd "$1"

@@ -47,6 +47,9 @@ source ~/.git-completion.sh
 #  Aliases and simple functions  #
 #--------------------------------#
 
+# List long
+alias ll='ls -laG'
+
 alias cls='tput reset; ls -laG'
 
 function cdl {

@@ -9,6 +9,7 @@
 [core]
     editor       = edit --wait --resume
     excludesfile = /Users/michaelhogg/.gitignore
+    pager        = cat
 
 [alias]
     st     = status

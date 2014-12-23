@@ -57,6 +57,9 @@ function cdl {
     cls
 }
 
+# Grep history
+alias hgr='history | grep -i --color=always $1'
+
 # Atlassian SourceTree
 alias st='stree'
 

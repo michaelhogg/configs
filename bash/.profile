@@ -95,3 +95,9 @@ function phpserver {
 function portlistening {
     lsof -i :$1
 }
+
+# Live monitor of process tree, rooted at the specified PID
+function livepstree {
+    while true  ; do date "+%H:%M:%S %Z"    ; pstree -g 2   "$1" ; sleep 0.25 ; done  # Mac
+    #while true ; do date "+%H:%M:%S.%N %Z" ; pstree -acnps "$1" ; sleep 0.25 ; done  # Linux
+}

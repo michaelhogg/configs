@@ -34,6 +34,15 @@ export HISTFILESIZE=5000  # After saving the history, the history file is trunca
 
 
 
+#------------------------#
+#  Node Version Manager  #
+#------------------------#
+
+# github.com/creationix/nvm
+source ~/.nvm/nvm.sh
+
+
+
 #-----------------------#
 #  Git auto-completion  #
 #-----------------------#

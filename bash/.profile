@@ -56,6 +56,8 @@ source ~/.git-completion.sh
 #  Aliases and simple functions  #
 #--------------------------------#
 
+alias reloadbashprofile='source ~/.profile'
+
 # List long
 alias ll='ls -laG'
 

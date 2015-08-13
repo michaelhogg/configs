@@ -143,3 +143,31 @@ function gitdiffusethree {
     fi
 
 }
+
+function gitdiffusemergeverify {
+
+    # $1 = Left commit hash
+    # $2 = Right commit hash
+    # $3 = Merged commit hash
+    # $4 = File path
+    # $5 = (Optional)  -i  Ignore all space
+
+    CommonAncestor=$(git merge-base $1 $2)
+    echo 'Common ancestor = '$CommonAncestor
+
+    IgnoreAllSpace=''
+
+    if [ "$5" == '-i' ]
+    then
+        IgnoreAllSpace='--ignore-all-space'
+    fi
+
+    diffuse $IgnoreAllSpace -r "$CommonAncestor" -r "$1" "$4" &
+    diffuse $IgnoreAllSpace -r "$2"              -r "$3" "$4" &
+
+    read -p 'Press Enter when ready to continue'
+
+    diffuse $IgnoreAllSpace -r "$CommonAncestor" -r "$2" "$4" &
+    diffuse $IgnoreAllSpace -r "$1"              -r "$3" "$4" &
+
+}

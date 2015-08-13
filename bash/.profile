@@ -112,3 +112,34 @@ function livepstree {
     while true  ; do date "+%H:%M:%S %Z"    ; pstree -g 2   "$1" ; sleep 0.25 ; done  # Mac
     #while true ; do date "+%H:%M:%S.%N %Z" ; pstree -acnps "$1" ; sleep 0.25 ; done  # Linux
 }
+
+
+#----- Git -----#
+
+function gitdiffusethree {
+
+    # $1 = First commit hash
+    # $2 = Second commit hash
+    # $3 = File path
+    # $4 = (Optional)  -i  Ignore all space
+    # $5 = (Optional)  -t  Launch two instances of diffuse instead of one
+
+    CommonAncestor=$(git merge-base $1 $2)
+    echo 'Common ancestor = '$CommonAncestor
+
+    IgnoreAllSpace=''
+
+    if [ "$4" == '-i' ] || [ "$5" == '-i' ]
+    then
+        IgnoreAllSpace='--ignore-all-space'
+    fi
+
+    if [ "$4" == '-t' ] || [ "$5" == '-t' ]
+    then
+        diffuse $IgnoreAllSpace -r "$CommonAncestor" -r "$1" "$3" &
+        diffuse $IgnoreAllSpace -r "$CommonAncestor" -r "$2" "$3" &
+    else
+        diffuse $IgnoreAllSpace -r "$1" -r "$CommonAncestor" -r "$2" "$3"
+    fi
+
+}

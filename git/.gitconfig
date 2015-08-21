@@ -21,10 +21,15 @@
     lgt    = log --format=hoggshort --max-count=10
     lgl    = log --format=hogglong
     fe     = fetch
+    fea    = fetch --all
     br     = branch -vv
+    bra    = branch -vv --all
     ch     = checkout
     po     = push origin
+    poh    = push origin HEAD
     puo    = push --set-upstream origin
+    ltags  = show-ref --tags -d
+    rtags  = ls-remote --tags
     diffs  = diff --staged
     diffi  = diff --ignore-all-space
     diffis = diff --ignore-all-space --staged

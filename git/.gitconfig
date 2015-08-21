@@ -11,6 +11,9 @@
     excludesfile = /Users/michaelhogg/.gitignore
     pager        = cat
 
+[push]
+    default = upstream
+
 [alias]
     st     = status
     re     = remote -v

@@ -59,7 +59,8 @@ source ~/.git-completion.sh
 alias reloadbashprofile='source ~/.profile'
 
 # List long
-alias ll='ls -laG'
+alias ll='ls -laG'          # OS X
+#alias ll='ls -la --color'  # Linux
 
 alias cls='tput reset; ls -laG'
 

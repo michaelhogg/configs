@@ -66,8 +66,10 @@ alias ll='ls -laG'          # OS X
 alias lo='find . -maxdepth 1 -print0 | sort -z | xargs -0 -n 1 stat -f "%Sp  %OLp  %Su:%Sg  %N" | sed "s|  \./|  |"'    # OS X
 #alias lo='find . -maxdepth 1 -print0 | sort -z | xargs -0 -n 1 stat --format="%A  %a  %U:%G  %n" | sed "s|  \./|  |"'  # Linux
 
-alias cls='tput reset; ls -laG'
+# Clear terminal scrollback, then list long
+alias cls='tput reset; ll'
 
+# Change directory, then clear terminal scrollback and list long
 function cdl {
     cd "$1"
     cls

@@ -125,7 +125,59 @@ function livepstree {
 }
 
 
-#----- Git -----#
+
+#---------#
+#  rsync  #
+#---------#
+
+function rsync_helper {
+
+    # $1 = Local     eg: "~/Documents/Code/api/"
+    # $2 = Remote    eg: "root@192.168.0.5:/var/www/api"
+    # $3 = chown     eg: "root:apache"
+
+    # rsync.samba.org
+
+    # Install using MacPorts:
+    #     sudo port install rsync
+
+    # Options:
+    #     --rsh=COMMAND         Specify the remote shell to use
+    #     --recursive           Recurse into directories
+    #     --links               Copy symlinks as symlinks
+    #     --perms               Preserve permissions
+    #     --executability       Preserve executability
+    #     --times               Preserve modification times
+    #     --chown=USER:GROUP    Force all files to be owned by USER with group GROUP
+    #     --group               Required to make --chown work. See serverfault.com/a/656494
+    #     --progress            Show progress during transfer
+    #     --exclude=PATTERN     Exclude files matching PATTERN
+    #     --verbose             Increase verbosity
+    #     --delete              Delete extraneous files from the receiving side (ones that aren't on the sending side)
+
+    echo "$1 --> $2 ($3)"
+
+    rsync                     \
+        --rsh='ssh'           \
+        --recursive           \
+        --links               \
+        --perms               \
+        --executability       \
+        --times               \
+        --chown="$3"          \
+        --group               \
+        --progress            \
+        --exclude='.DS_Store' \
+        "$1"                  \
+        "$2"
+
+}
+
+
+
+#-------#
+#  Git  #
+#-------#
 
 function gitdiffusethree {
 

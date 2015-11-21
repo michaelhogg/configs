@@ -126,9 +126,9 @@ function livepstree {
 
 
 
-#---------#
-#  rsync  #
-#---------#
+#---------------------#
+#  rsync and fswatch  #
+#---------------------#
 
 function rsync_helper {
 
@@ -170,6 +170,41 @@ function rsync_helper {
         --exclude='.DS_Store' \
         "$1"                  \
         "$2"
+
+}
+
+export -f rsync_helper  # unix.stackexchange.com/questions/158564/how-to-use-defined-function-with-xargs
+
+function watch_and_sync {
+
+    # $1 = Local     eg: "~/Documents/Code/api/"
+    # $2 = Remote    eg: "root@192.168.0.5:/var/www/api"
+    # $3 = chown     eg: "root:apache"
+
+    #----- fswatch -----#
+
+    # emcrisostomo.github.io/fswatch/
+
+    # Install using MacPorts:
+    #     sudo port install fswatch
+
+    # Options:
+    #     --one-per-batch    Print a single message with the number of change events.
+    #     --exclude=REGEX    Exclude paths matching REGEX.  Multiple exclude filters can be specified using this option multiple times.
+
+    # From the README:
+    #     To run a command when a set of change events is printed to standard output but no event details are required, then the following command can be used:
+    #         fswatch --one-per-batch PATH | xargs -n1 -I{} COMMAND
+
+    #----- xargs -----#
+
+    # Options:
+    #     -n NUM        Set the maximum number of arguments taken from standard input for each invocation of utility.
+    #     -I REPLSTR    Execute utility for each input line, replacing one or more occurrences of REPLSTR in arguments to utility with the entire line of input.
+
+    echo "Watching $1 for changes..."
+
+    fswatch --one-per-batch --exclude='.DS_Store' "$1" | xargs -n 1 -I {} bash -c "rsync_helper '$1' '$2' '$3'"
 
 }
 

@@ -87,6 +87,10 @@ alias mysql='mysql5'
 # Diffuse, ignoring all white space
 alias diffusei='diffuse --ignore-all-space'
 
+# NPM install
+alias npmih='npm install --loglevel http'
+alias npmii='npm install --loglevel info'
+
 # Less, with long prompt, line numbers gutter, and chopped long lines
 alias lessx='less -MNS'
 

@@ -41,6 +41,8 @@
     dfui   = difftool -t diffusei
     dfus   = difftool -t diffuse  --staged
     dfuis  = difftool -t diffusei --staged
+    fmd    = difftool -t filemerge
+    fmds   = difftool -t filemerge --staged
 
 [color]
     branch = auto
@@ -86,3 +88,9 @@
 
 [difftool "diffusei"]
     cmd = diffuse --ignore-all-space \"$LOCAL\" \"$REMOTE\"
+
+
+#--- FileMerge ---#
+
+[difftool "filemerge"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"

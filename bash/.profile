@@ -214,6 +214,20 @@ function watch_and_sync {
 #  Git  #
 #-------#
 
+function gitltags {
+
+    git show-ref --tags -d | grep -F -v '{}'
+
+}
+
+function gitrtags {
+
+    # $1 = Name of remote
+
+    git ls-remote --tags "$1" | grep -F -v '{}'
+
+}
+
 function gitdiffusethree {
 
     # $1 = First commit hash

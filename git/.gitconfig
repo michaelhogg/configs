@@ -54,8 +54,8 @@
     upstream = cyan
 
 [pretty]
-    hoggshort = %C(red)%aD  %C(cyan)%an  %C(yellow)%H %C(magenta)%d %C(green)%s
-    hogglong  = %C(red)%aD  %C(cyan)%an  %C(yellow)%H %C(magenta)%d %C(green)%B
+    hoggshort = %C(red)%aD  %C(yellow)%h (%H)  %C(cyan)%an %C(magenta)%d %C(green)%s
+    hogglong  = %C(red)%aD  %C(yellow)%h (%H)  %C(cyan)%an %C(magenta)%d %C(green)%B
 
 
 

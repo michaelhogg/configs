@@ -19,6 +19,7 @@
     re     = remote -v
     lg     = log --format=hoggshort
     lgt    = log --format=hoggshort --max-count=10
+    lgo    = log --format=hoggone   --max-count=1
     lgl    = log --format=hogglong
     fe     = fetch
     fea    = fetch --all
@@ -56,6 +57,7 @@
 [pretty]
     hoggshort = %C(red)%aD  %C(yellow)%h (%H)  %C(cyan)%an %C(magenta)%d %C(green)%s
     hogglong  = %C(red)%aD  %C(yellow)%h (%H)  %C(cyan)%an %C(magenta)%d %C(green)%B
+    hoggone   = %n    %C(red)%aD     %C(cyan)%an (%ae)%n%n    %C(yellow)%h (%H)    %C(magenta)%d%n%n    %C(green)%s%n
 
 
 

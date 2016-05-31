@@ -39,8 +39,10 @@
     twdis  = difftool -t twdiffi --staged
     dfu    = difftool -t diffuse
     dfui   = difftool -t diffusei
-    dfus   = difftool -t diffuse  --staged
-    dfuis  = difftool -t diffusei --staged
+    dfuib  = difftool -t diffuseib
+    dfus   = difftool -t diffuse   --staged
+    dfuis  = difftool -t diffusei  --staged
+    dfuibs = difftool -t diffuseib --staged
     fmd    = difftool -t filemerge
     fmds   = difftool -t filemerge --staged
 
@@ -88,6 +90,9 @@
 
 [difftool "diffusei"]
     cmd = diffuse --ignore-all-space \"$LOCAL\" \"$REMOTE\"
+
+[difftool "diffuseib"]
+    cmd = diffuse --ignore-all-space --ignore-blank-lines \"$LOCAL\" \"$REMOTE\"
 
 
 #--- FileMerge ---#
